@@ -1,5 +1,7 @@
 # email-spam-detection
 
+# Count Words in File
+
 ### Purpose:
 Counts how many times each word from a provided list appears in a given file (case-insensitive).
 
@@ -29,13 +31,15 @@ If "lottery" appears 2 times, "now" 1 time, and "free" 4 times, the output would
 If the file doesn’t exist, it prints an error and returns None.
 
 ---
+# Spam Detector using PyTorch
+
 🧠 Spam Detector Summary
-# 1. 📦 Imports
+### 1. 📦 Imports
 * **torch:** Core PyTorch library.
 * **torch.nn:** Neural network building blocks.
 * **torch.nn.functional:** Activation functions like ReLU and sigmoid.
 
-# 2. 📨 Input Vector
+### 2. 📨 Input Vector
 
 ``` python
 result = {'lottery': 1, 'now': 0, 'free': 1}
@@ -45,7 +49,7 @@ x = torch.tensor([list(result.values())], dtype=torch.float32)  # shape: (1, 3)
 * Converts word presence into a 2D tensor.
 * dtype=torch.float32 ensures compatibility with model weights.
 
-# 3. 🏗️ Neural Network Definition
+### 3. 🏗️ Neural Network Definition
 
 ``` python
 class SpamDetector(nn.Module):
@@ -66,7 +70,7 @@ class SpamDetector(nn.Module):
 
 * **Sigmoid:** Outputs probability between 0 and 1.
 
-# 4. 🚀 Model Execution
+### 4. 🚀 Model Execution
 
 ``` python
 model = SpamDetector()
